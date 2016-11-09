@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org"
+      layout:decorator="layout/main">
+<body>
+<div layout:fragment="content">
+    <table class="striped">
+        <thead>
+        <tr>
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getSurname()}"></td>
+            <td th:text="${user.getFirstName()}"></td>
+            <td th:text="${user.getLastName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
